@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<a class="btn btn-success" href="{% url 'update-product' product.id %}" role="button">Update</a>
+<a class="btn btn-danger" href="{% url 'delete-product' product.id %}" role="button">Delete</a>
+
+    <figure style="text-align: center;" class="figure">
+  <img style="width: 500px; height: auto; border: 5px solid black" src="{{ product.image.url }}" class="figure-img img-fluid rounded" alt="...">
+    <h4 style="color: #fff; border: 3px dashed black;" >Цена: {{ product.price }} сом</h4>
+        <h2 style="color: #fff;">{{ product.name }}</h2>
+  <figcaption style="color: #fff;" class="figure-caption">{{ product.description }}</figcaption>
+</figure>
+
+{% endblock %}
